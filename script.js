@@ -51,6 +51,8 @@ const cardArray = [
   },
 ];
 
+cardArray.sort(() => 0.5 - Math.random());
+
 const container = document.querySelector(".image-container");
 const score = document.querySelector(".score");
 const resultDisplay = document.querySelector(".result");
@@ -66,7 +68,6 @@ function createBoard() {
   }
   container.insertAdjacentHTML("beforeend", html);
 
-  // Add event listeners after inserting HTML
   const cards = container.querySelectorAll("img");
   cards.forEach((card) => {
     card.addEventListener("click", flipCard);
